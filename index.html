@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PEPPY — The Internet’s Favorite Frog Coin</title>
+  <meta name="description"
+    content="PEPPY is a playful frog-inspired meme coin landing site. Explore tokenomics, roadmap, and how to buy. Not affiliated with any brand." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+</head>
+
+<body>
+  <header class="nav">
+    <div class="brand">
+      <div class="logo-frog" aria-hidden="true">
+        <svg width="28" height="28" viewBox="0 0 64 64" fill="none" role="img" aria-label="Frog logo">
+          <defs>
+            <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#00FF88" />
+              <stop offset="100%" stop-color="#00D1B2" />
+            </linearGradient>
+          </defs>
+          <circle cx="32" cy="32" r="30" fill="url(#g1)"></circle>
+          <circle cx="22" cy="24" r="6" fill="#fff"></circle>
+          <circle cx="42" cy="24" r="6" fill="#fff"></circle>
+          <circle cx="22" cy="24" r="3" fill="#0b3d2b"></circle>
+          <circle cx="42" cy="24" r="3" fill="#0b3d2b"></circle>
+          <path d="M20 40 C 28 46, 36 46, 44 40" stroke="#0b3d2b" stroke-width="3" fill="none" stroke-linecap="round" />
+        </svg>
+      </div>
+      <span class="brand-name">$PEPPY</span>
+    </div>
+    <nav class="menu">
+      <a href="#about">About</a>
+      <a href="#tokenomics">Tokenomics</a>
+      <a href="#how">How to Buy</a>
+      <a href="#roadmap">Roadmap</a>
+      <a href="#community">Community</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn-primary small" href="#buy">Buy $PEPPY</a>
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+      <a href="#about" class="mobile-link">About</a>
+      <a href="#tokenomics" class="mobile-link">Tokenomics</a>
+      <a href="#how" class="mobile-link">How to Buy</a>
+      <a href="#roadmap" class="mobile-link">Roadmap</a>
+      <a href="#community" class="mobile-link">Community</a>
+      <a href="#buy" class="btn-primary block">Buy $PEPPY</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <h1 class="gradient-text">Frog-Powered Internet Energy</h1>
+          <p class="subtitle">
+            A fun, community-driven meme coin with good vibes and a green heartbeat.
+            No promises, just memes, community, and internet culture.
+          </p>
+          <div class="cta-group">
+            <a href="#buy" class="btn-primary big">Buy $PEPPY</a>
+            <a href="#chart" class="btn-outline big">View Chart</a>
+          </div>
+
+          <div class="stats">
+            <div class="stat">
+              <span class="label">Mock Market Cap</span>
+              <h3 id="cap">$12,345,678</h3>
+            </div>
+            <div class="stat">
+              <span class="label">Holders</span>
+              <h3 id="holders">42,069</h3>
+            </div>
+            <div class="stat">
+              <span class="label">Liquidity</span>
+              <h3 id="liq">$1,234,567</h3>
+            </div>
+          </div>
+          <span class="demo-badge">Demo data for preview</span>
+        </div>
+
+        <div class="hero-art" aria-hidden="true">
+          <div class="orb orb-1"></div>
+          <div class="orb orb-2"></div>
+          <div class="frog-wrap">
+            <!-- Friendly original frog mascot (not affiliated) -->
+            <svg class="frog" viewBox="0 0 320 240" role="img" aria-label="Mascot frog">
+              <defs>
+                <linearGradient id="frogGrad" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#00FF88" />
+                  <stop offset="100%" stop-color="#00D1B2" />
+                </linearGradient>
+                <radialGradient id="belly" cx="50%" cy="60%" r="60%">
+                  <stop offset="0%" stop-color="#eafff3" />
+                  <stop offset="100%" stop-color="#c9ffe7" />
+                </radialGradient>
+              </defs>
+              <ellipse cx="160" cy="140" rx="120" ry="80" fill="url(#frogGrad)"></ellipse>
+              <circle cx="110" cy="90" r="34" fill="url(#frogGrad)"></circle>
+              <circle cx="210" cy="90" r="34" fill="url(#frogGrad)"></circle>
+              <circle cx="110" cy="88" r="18" fill="#fff"></circle>
+              <circle cx="210" cy="88" r="18" fill="#fff"></circle>
+              <circle cx="110" cy="88" r="8" fill="#0b3d2b"></circle>
+              <circle cx="210" cy="88" r="8" fill="#0b3d2b"></circle>
+              <ellipse cx="160" cy="162" rx="68" ry="44" fill="url(#belly)" opacity="0.92"></ellipse>
+              <path d="M120 150 Q160 176 200 150" stroke="#0b3d2b" stroke-width="6" stroke-linecap="round"
+                fill="none" />
+            </svg>
+            <div class="glow"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section container">
+      <div class="grid-3">
+        <article class="card" data-animate>
+          <h2>About $PEPPY</h2>
+          <p>
+            $PEPPY celebrates open internet culture. It is a meme-driven token site demo built for fun UI/UX
+            exploration,
+            smooth animations, and community-first vibes. No financial advice.
+          </p>
+        </article>
+        <article class="card" data-animate>
+          <h2>Zero Team Tax</h2>
+          <p>
+            No buy/sell tax in this demo. Transparent vibes for the community. Liquidity and renounced ownership are
+            common narratives in meme culture—always do your own research.
+          </p>
+        </article>
+        <article class="card" data-animate>
+          <h2>Community Energy</h2>
+          <p>
+            Memes move fast. $PEPPY leans into creativity, playful branding, and a welcoming community spirit.
+            Be kind, be funny, be green.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="tokenomics" class="section container">
+      <div class="split">
+        <div class="card" data-animate>
+          <h2>Tokenomics</h2>
+          <div class="tokenomics">
+            <div class="row">
+              <span class="label">Total Supply</span>
+              <strong>1,000,000,000</strong>
+            </div>
+            <div class="row">
+              <span class="label">Taxes</span>
+              <strong>0% Buy / 0% Sell </strong>
+            </div>
+            <div class="row">
+              <span class="label">Liquidity</span>
+              <strong>Locked Forever</strong>
+            </div>
+            <div class="row">
+              <span class="label">Contract</span>
+              <div class="mono contract">
+                <span id="contract">0xPEPPYFROG0000000000000000000000</span>
+                <button class="icon-btn" id="copyBtn" title="Copy contract">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                    <path d="M9 9h10v11H9z" stroke="currentColor" stroke-width="2"/>
+                    <path d="M5 5h10v10" stroke="currentColor" stroke-width="2"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="actions">
+            <a id="buy" href="#" class="btn-primary">Buy on DEX (demo)</a>
+            <a href="#how" class="btn-secondary">How to Buy</a>
+          </div>
+          <p class="status" id="copyStatus" role="status" aria-live="polite"></p>
+        </div>
+
+        <div class="card" id="chart" data-animate>
+          <div class="card-header">
+            <h2>Live (Mock) Chart</h2>
+            <span class="pill success">Demo Feed</span>
+          </div>
+          <div class="card-body">
+            <canvas id="priceChart" height="120"></canvas>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="how" class="section container">
+      <div class="card" data-animate>
+        <h2>How to Buy (Demo)</h2>
+        <div class="steps">
+          <div class="step">
+            <div class="step-index">1</div>
+            <div>
+              <h3>Install a Wallet</h3>
+              <p>Get MetaMask or any EVM-compatible wallet. Create a wallet and keep your seed phrase safe.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-index">2</div>
+            <div>
+              <h3>Fund with BNB</h3>
+              <p>Buy BNB from an exchange and send it to your wallet address.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-index">3</div>
+            <div>
+              <h3>Swap for $PEPPY</h3>
+              <p>Open a DEX like PancakeSwap, paste the contract, and swap BNB for $PEPPY.</p>
+            </div>
+          </div>
+        </div>
+        <div class="actions">
+          <a class="btn-primary" href="#">Open DEX (demo)</a>
+          <a class="btn-outline" href="#tokenomics">Copy Contract</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="roadmap" class="section container">
+      <div class="card" data-animate>
+        <h2>Roadmap (Just for Fun)</h2>
+        <div class="timeline">
+          <div class="milestone">
+            <div class="dot"></div>
+            <div class="content">
+              <h3>Phase 1 — Meme Awakening</h3>
+              <p>Launch socials, drop art, community contests, and early holders gathering.</p>
+            </div>
+          </div>
+          <div class="milestone">
+            <div class="dot"></div>
+            <div class="content">
+              <h3>Phase 2 — Frog Nation</h3>
+              <p>Memetic partnerships, sticker packs, and creative tools for the community.</p>
+            </div>
+          </div>
+          <div class="milestone">
+            <div class="dot"></div>
+            <div class="content">
+              <h3>Phase 3 — Pond Expansion</h3>
+              <p>More utility ideas led by the community. Build what is fun and brings people together.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="community" class="section container">
+      <div class="split">
+        <div class="card" data-animate>
+          <h2>Join the Community</h2>
+          <p>Follow, share memes, and hang out with the frog fam.</p>
+          <div class="socials">
+            <a class="icon-btn" href="#" aria-label="X (Twitter)">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M21 3L8.7 20.3H3L15.3 3H21zM12.5 3L3 17.5V21l9.5-14H12.5z"></path>
+              </svg>
+              <span>X</span>
+            </a>
+            <a class="icon-btn" href="#" aria-label="Telegram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M9.5 14.2l-.3 4c.4 0 .6-.2.8-.4l2-1.9 4.1 3c.7.4 1.2.2 1.4-.6l2.6-12c.2-1-.4-1.4-1.2-1.1L3.7 10.1c-1 .4-1 1 0 1.3l4.3 1.3 9.9-6.2-8.4 7.7z">
+                </path>
+              </svg>
+              <span>Telegram</span>
+            </a>
+            <a class="icon-btn" href="#" aria-label="Discord">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M20 4a16.3 16.3 0 00-4-.9l-.2.5c2.1.5 3.2 1.2 4.4 2.1-1.9-.9-3.7-1.6-5.7-1.9a14.6 14.6 0 00-5.2 0C7 4.1 5.2 4.8 3.3 5.7 4.5 4.8 5.6 4 7.7 3.6l-.2-.5A16.3 16.3 0 003.5 4 17 17 0 001 13.5C1 18.6 5.3 20 5.3 20l.6-.8c-.4-.2-.8-.5-1.1-.8.8.6 1.9 1.1 3.5 1.4A12.9 12.9 0 0012 20a12.9 12.9 0 003.7-.2c1.6-.3 2.7-.8 3.5-1.4-.3.3-.7.6-1.1.8l.6.8S23 18.6 23 13.5A17 17 0 0020 4zM9.3 14c-.6 0-1.2-.7-1.2-1.5S8.7 11 9.3 11s1.2.7 1.2 1.5S9.9 14 9.3 14zm5.4 0c-.6 0-1.2-.7-1.2-1.5s.6-1.5 1.2-1.5 1.2.7 1.2 1.5-.6 1.5-1.2 1.5z">
+                </path>
+              </svg>
+              <span>Discord</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="card" data-animate>
+          <h2>Newsletter</h2>
+          <p>Get the latest meme drops and updates.</p>
+          <form id="newsletterForm" class="form">
+            <input type="email" id="email" placeholder="Enter your email" aria-label="Email" required />
+            <button type="submit" class="btn-primary">Subscribe</button>
+          </form>
+          <p class="status" id="newsletterStatus" role="status" aria-live="polite"></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>2025 © PEPPY — A frog-inspired meme coin demo UI. Not affiliated with any existing brands or trademarks.</p>
+    <p>This site is for design demonstration only. No financial advice.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
