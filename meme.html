@@ -4,21 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- SEO: Keyword-rich title -->
-    <title>Top 50 Meme Coins by Market Cap | Real-Time Crypto Rankings</title>
+    <title>Top 10 Meme Coins by Market Cap | Real-Time Crypto Rankings</title>
     <!-- SEO: Meta description -->
-    <meta name="description" content="Explore the top 50 meme coins ranked by market capitalization, updated hourly. Includes coin introductions, total supply, blockchain, market cap, purchase methods, recommended CEX/DEX, and wallet support.">
+    <meta name="description" content="Explore the top 10 meme coins ranked by market capitalization, updated hourly. Includes coin introductions, total supply, blockchain, market cap, purchase methods, recommended CEX/DEX, and wallet support.">
     <!-- SEO: Keywords -->
-    <meta name="keywords" content="top 50 meme coins, meme coin rankings, market cap, cryptocurrency, Dogecoin, Shiba Inu, Pepe, blockchain, crypto exchanges, wallets">
+    <meta name="keywords" content="top 10 meme coins, meme coin rankings, market cap, cryptocurrency, Dogecoin, Shiba Inu, Pepe, blockchain, crypto exchanges, wallets">
     <!-- SEO: Author & Robots -->
     <meta name="author" content="Meme Coin Tracker">
     <meta name="robots" content="index, follow">
     <!-- Open Graph (no image) -->
-    <meta property="og:title" content="Top 50 Meme Coins by Market Cap">
-    <meta property="og:description" content="Real-time top 50 meme coins with details on supply, blockchain, market cap, exchanges, and wallets. Updated hourly.">
+    <meta property="og:title" content="Top 10 Meme Coins by Market Cap">
+    <meta property="og:description" content="Real-time top 10 meme coins with details on supply, blockchain, market cap, exchanges, and wallets. Updated hourly.">
     <meta property="og:type" content="website">
     <!-- Twitter Card (no image) -->
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Top 50 Meme Coins by Market Cap">
+    <meta name="twitter:title" content="Top 10 Meme Coins by Market Cap">
     <meta name="twitter:description" content="Explore top meme coins: intros, supply, chains, cap, buys, CEX/DEX, wallets. Hourly updates.">
     <!-- SEO: Canonical (dynamic) -->
     <link rel="canonical" href="">
@@ -143,7 +143,7 @@
 </head>
 <body>
     <header>
-        <h1>Top 50 Meme Coins by Market Cap</h1>
+        <h1>Top 10 Meme Coins by Market Cap</h1>
     </header>
     <main>
         <div id="loading" aria-live="polite">Loading...</div>
@@ -156,15 +156,15 @@
     {
         "@context": "https://schema.org",
         "@type": "WebPage",
-        "name": "Top 50 Meme Coins by Market Cap",
-        "description": "Real-time rankings of the top 50 meme coins by market capitalization, updated hourly with project details, supply, blockchains, exchanges, and wallets.",
+        "name": "Top 10 Meme Coins by Market Cap",
+        "description": "Real-time rankings of the top 10 meme coins by market capitalization, updated hourly with project details, supply, blockchains, exchanges, and wallets.",
         "publisher": {
             "@type": "Organization",
             "name": "Meme Coin Tracker"
         },
         "mainEntity": {
             "@type": "ItemList",
-            "name": "Top 50 Meme Coins",
+            "name": "Top 10 Meme Coins",
             "itemListElement": []
         }
     }
@@ -179,7 +179,7 @@
         // Cache and update settings
         const CACHE_KEY = 'memeCoinsData';
         const CACHE_DURATION = 3600000; // 1 hour
-        const API_URL = 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&category=meme-token&order=market_cap_desc&per_page=50&page=1';
+        const API_URL = 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&category=meme-token&order=market_cap_desc&per_page=10&page=1';
 
         // Static coin details (extend or replace with API)
         const coinDetails = {
