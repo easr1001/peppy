@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top 10 Strongest Meme Coins by Market Cap</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background-color: #f4f4f4; }
+        h1 { text-align: center; color: #333; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; background-color: white; }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+        th { background-color: #007bff; color: white; }
+        tr:nth-child(even) { background-color: #f9f9f9; }
+        .loading { text-align: center; font-style: italic; }
+        footer { text-align: center; margin-top: 20px; color: #666; }
+        a { color: #007bff; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <h1>Top 10 Strongest Meme Coins by Market Cap (Real-Time Updates)</h1>
+    <p style="text-align: center;">This single-page site ranks meme coins by market cap. Data auto-updates every 60 seconds via CoinGecko API. Last updated: <span id="last-update">Loading...</span></p>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Rank</th>
+                <th>Name (Symbol)</th>
+                <th>Detailed Introduction</th>
+                <th>Market Cap</th>
+                <th>Total Supply</th>
+                <th>Circulating Supply</th>
+                <th>Issuing Blockchain</th>
+                <th>Purchasing Methods & Quick Buy</th>
+                <th>Recommended Exchanges (CEX/DEX)</th>
+                <th>Wallet Links</th>
+            </tr>
+        </thead>
+        <tbody id="meme-table">
+            <!-- Rows will be populated by JS -->
+            <tr><td colspan="10" class="loading">Loading data...</td></tr>
+        </tbody>
+    </table>
+    
+    <footer>
+        Data sourced from CoinGecko API. For real-time updates, the site uses <a href="https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&category=meme-token&order=market_cap_desc&per_page=10&page=1">this API endpoint</a>. Always DYOR before investing.
+    </footer>
+
+    <script>
+        const memeCoins = [
+            { id: 'dogecoin', name: 'Dogecoin', symbol: 'DOGE', intro: 'Dogecoin is the original meme coin, created as a joke in 2013 based on the Shiba Inu dog meme. It has grown into a major cryptocurrency with strong community support and real-world utility, including payments and tipping.', blockchain: 'Dogecoin (Proof-of-Work, based on Litecoin)', cex: 'Binance, Coinbase, Kraken', dex: 'None (centralized chain)', wallet: 'Dogecoin Core Wallet: https://dogecoin.com/', quickBuy: 'Buy with credit card on Coinbase or Binance app.' },
+            { id: 'shiba-inu', name: 'Shiba Inu', symbol: 'SHIB', intro: 'Shiba Inu is an Ethereum-based meme coin inspired by Dogecoin, launched in 2020. It features a decentralized ecosystem with Shibaswap DEX, NFTs, and plans for metaverse integration.', blockchain: 'Ethereum', cex: 'Binance, Coinbase, KuCoin', dex: 'Uniswap, Shibaswap', wallet: 'MetaMask: https://metamask.io/', quickBuy: 'Swap ETH for SHIB on Uniswap or buy directly on Binance.' },
+            { id: 'memecore', name: 'MemeCore', symbol: 'M', intro: 'MemeCore is a newer meme coin that surged in popularity in 2025, focusing on community-driven memes and viral marketing. It emphasizes decentralization and fun utility in meme culture.', blockchain: 'Ethereum (assumed based on common meme coin platforms)', cex: 'Gate.io, OKX, Bybit', dex: 'Uniswap', wallet: 'MetaMask: https://metamask.io/', quickBuy: 'Quick swap on Uniswap via wallet connect.' },
+            { id: 'pepe', name: 'Pepe', symbol: 'PEPE', intro: 'Pepe is based on the famous Pepe the Frog meme, launched in 2023. It gained massive traction through social media and has no utility beyond its meme status, driven purely by community hype.', blockchain: 'Ethereum', cex: 'Binance, Kraken, Bitfinex', dex: 'Uniswap', wallet: 'MetaMask: https://metamask.io/', quickBuy: 'Instant buy on Binance or swap on Uniswap.' },
+            { id: 'pudgy-penguins', name: 'Pudgy Penguins', symbol: 'PENGU', intro: 'Pudgy Penguins originated as an NFT collection and evolved into a meme coin in 2024-2025, leveraging cute penguin memes for community engagement and merchandise.', blockchain: 'Solana', cex: 'Gate.io, MEXC, HTX', dex: 'Raydium, Jupiter', wallet: 'Phantom: https://phantom.app/', quickBuy: 'Quick purchase via Phantom wallet on Raydium.' },
+            { id: 'pump-fun', name: 'Pump.fun', symbol: 'PUMP', intro: 'Pump.fun is a Solana-based platform for launching meme coins, with its own token PUMP. It facilitates easy meme coin creation and trading, known for viral pumps.', blockchain: 'Solana', cex: 'Gate.io, OKX, Bybit', dex: 'Hyperliquid, Raydium', wallet: 'Phantom: https://phantom.app/', quickBuy: 'Buy via Pump.fun app or Jupiter aggregator.' },
+            { id: 'official-trump', name: 'Official Trump', symbol: 'TRUMP', intro: 'Official Trump is a politically themed meme coin inspired by Donald Trump, launched in 2024. It capitalizes on election hype and satirical elements.', blockchain: 'Solana', cex: 'Gate.io, MEXC, Bitget', dex: 'Raydium', wallet: 'Phantom: https://phantom.app/', quickBuy: 'Swap SOL for TRUMP on Raydium via Phantom.' },
+            { id: 'bonk', name: 'Bonk', symbol: 'BONK', intro: 'Bonk is a Solana-based meme coin launched in 2022, aimed at revitalizing the Solana ecosystem post-FTX collapse. It features airdrops and community events.', blockchain: 'Solana', cex: 'Binance, Coinbase, Kraken', dex: 'Raydium, Jupiter', wallet: 'Phantom: https://phantom.app/', quickBuy: 'Quick buy on Coinbase or swap on Jupiter.' },
+            { id: 'spx6900', name: 'SPX6900', symbol: 'SPX', intro: 'SPX6900 is a meme coin parodying stock market indices like S&P 500, with a humorous "over 9000" twist. It gained traction in 2025 through viral marketing.', blockchain: 'Solana', cex: 'Gate.io, OKX, Bybit', dex: 'Raydium', wallet: 'Phantom: https://phantom.app/', quickBuy: 'Instant swap on Raydium.' },
+            { id: 'floki', name: 'FLOKI', symbol: 'FLOKI', intro: 'FLOKI is inspired by Elon Musk\'s dog, launched in 2021. It has expanded to include gaming, NFTs, and charity initiatives across multiple chains.', blockchain: 'Ethereum & BNB Chain', cex: 'Binance, Gate.io, KuCoin', dex: 'Uniswap, PancakeSwap', wallet: 'MetaMask: https://metamask.io/', quickBuy: 'Buy on Binance or swap on PancakeSwap.' }
+        ];
+
+        async function fetchMemeData() {
+            try {
+                const response = await fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&category=meme-token&order=market_cap_desc&per_page=10&page=1');
+                const data = await response.json();
+                updateTable(data);
+                document.getElementById('last-update').textContent = new Date().toLocaleString();
+            } catch (error) {
+                console.error('Error fetching data:', error);
+                document.getElementById('last-update').textContent = 'Error loading data';
+            }
+        }
+
+        function updateTable(apiData) {
+            const tableBody = document.getElementById('meme-table');
+            tableBody.innerHTML = '';
+            apiData.forEach((coin, index) => {
+                const staticData = memeCoins.find(c => c.id === coin.id) || { intro: 'N/A', blockchain: 'N/A', cex: 'N/A', dex: 'N/A', wallet: 'N/A', quickBuy: 'N/A' };
+                const row = `
+                    <tr>
+                        <td>${index + 1}</td>
+                        <td>${coin.name} (${coin.symbol.toUpperCase()})</td>
+                        <td>${staticData.intro}</td>
+                        <td>$${coin.market_cap.toLocaleString()}</td>
+                        <td>${coin.total_supply ? coin.total_supply.toLocaleString() : 'Unlimited'}</td>
+                        <td>${coin.circulating_supply.toLocaleString()}</td>
+                        <td>${staticData.blockchain}</td>
+                        <td>${staticData.quickBuy} (e.g., via credit card on CEX or wallet swap on DEX).</td>
+                        <td>CEX: ${staticData.cex}<br>DEX: ${staticData.dex}</td>
+                        <td><a href="${staticData.wallet}" target="_blank">Official Wallet</a></td>
+                    </tr>
+                `;
+                tableBody.innerHTML += row;
+            });
+        }
+
+        // Initial load
+        fetchMemeData();
+        // Auto-update every 60 seconds
+        setInterval(fetchMemeData, 60000);
+    </script>
+</body>
+</html>
