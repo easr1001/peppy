@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Maneki-Neko Meme | 招き猫ミーム</title>
+  <title>MANEKO - The Lucky Cat Meme Coin</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
   
@@ -13,17 +13,16 @@
       theme: {
         extend: {
           colors: {
-            maneki: {
-              gold: '#D4AF37',
-              red: '#C72C41',
-              black: '#2D2926',
-              white: '#F7F7F2',
-              pink: '#F8A4B0'
+            maneko: {
+              gold: '#FFD700',
+              red: '#DC2626',
+              dark: '#111827',
+              light: '#F9FAFB'
             }
           },
           fontFamily: {
             sans: ['Inter', 'system-ui', 'sans-serif'],
-            japan: ['"Noto Sans JP"', 'sans-serif']
+            meme: ['"Comic Sans MS"', '"Comic Neue"', 'cursive', 'sans-serif']
           }
         }
       }
@@ -32,252 +31,240 @@
   
   <style type="text/tailwindcss">
     @layer utilities {
-      .content-auto {
-        content-visibility: auto;
+      .text-glow {
+        text-shadow: 0 0 8px rgba(255, 215, 0, 0.8);
       }
-      .rotate-paw {
-        animation: rotatePaw 2s ease-in-out infinite;
+      .float {
+        animation: float 6s ease-in-out infinite;
       }
-      .float-slow {
-        animation: floatSlow 3s ease-in-out infinite;
+      .pulse-gold {
+        animation: pulseGold 3s infinite;
       }
     }
     
-    @keyframes rotatePaw {
-      0%, 100% { transform: rotate(0deg); }
-      50% { transform: rotate(15deg); }
-    }
-    
-    @keyframes floatSlow {
+    @keyframes float {
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-10px); }
     }
+    
+    @keyframes pulseGold {
+      0%, 100% { box-shadow: 0 0 10px rgba(255, 215, 0, 0.6); }
+      50% { box-shadow: 0 0 20px rgba(255, 215, 0, 0.9); }
+    }
   </style>
 </head>
-<body class="bg-maneki-white text-maneki-black font-sans min-h-screen flex flex-col">
+<body class="bg-maneko-dark text-white min-h-screen font-sans">
   <!-- 导航栏 -->
-  <header class="bg-white shadow-sm sticky top-0 z-50">
+  <nav class="sticky top-0 z-50 bg-black/80 backdrop-blur-md border-b border-maneko-gold/30">
     <div class="container mx-auto px-4 py-3 flex justify-between items-center">
       <div class="flex items-center gap-3">
-        <div class="w-10 h-10 bg-maneki-gold rounded-lg flex items-center justify-center float-slow">
-          <i class="fa fa-paw text-maneki-red text-xl"></i>
+        <div class="w-10 h-10 bg-maneko-gold rounded-full flex items-center justify-center float">
+          <i class="fa fa-paw text-maneko-dark text-xl"></i>
         </div>
-        <h1 class="text-xl font-bold bg-gradient-to-r from-maneki-gold to-maneki-red bg-clip-text text-transparent">ManekiMeme</h1>
+        <h1 class="text-2xl font-bold text-maneko-gold text-glow">MANEKO</h1>
       </div>
       
-      <nav class="hidden md:flex items-center gap-6">
-        <a href="#memes" class="text-gray-600 hover:text-maneki-gold transition-colors">Memes</a>
-        <a href="#about" class="text-gray-600 hover:text-maneki-gold transition-colors">About</a>
-        <a href="#community" class="text-gray-600 hover:text-maneki-gold transition-colors">Community</a>
-      </nav>
+      <div class="hidden md:flex items-center gap-8">
+        <a href="#about" class="hover:text-maneko-gold transition-colors">About</a>
+        <a href="#tokenomics" class="hover:text-maneko-gold transition-colors">Tokenomics</a>
+        <a href="#memes" class="hover:text-maneko-gold transition-colors">Memes</a>
+        <a href="#buy" class="hover:text-maneko-gold transition-colors">Buy Now</a>
+      </div>
       
-      <button class="bg-maneki-gold text-maneki-red px-4 py-2 rounded-full font-bold hover:bg-maneki-gold/80 transition-colors">
-        <i class="fa fa-heart mr-1"></i> Share
-      </button>
+      <div class="flex items-center gap-4">
+        <button class="bg-maneko-gold text-maneko-dark px-4 py-2 rounded-full font-bold hover:bg-maneko-gold/80 transition-colors pulse-gold">
+          <i class="fa fa-shopping-cart mr-1"></i> Buy MANEKO
+        </button>
+        <button class="md:hidden text-2xl">
+          <i class="fa fa-bars"></i>
+        </button>
+      </div>
     </div>
-  </header>
+  </nav>
 
-  <!-- 主内容区 -->
-  <main class="flex-1 container mx-auto px-4 py-8">
-    <!-- 英雄区 -->
-    <section class="mb-16 text-center">
-      <div class="inline-block px-6 py-2 mb-6 bg-maneki-pink/20 rounded-full text-maneki-red text-sm font-semibold">
-        LUCKY MEME CAT <i class="fa fa-star ml-1"></i>
-      </div>
-      <h2 class="text-[clamp(1.8rem,4vw,3rem)] font-bold mb-6">
-        Maneki-Neko <br class="md:hidden">Meme Collection
-      </h2>
-      <p class="text-gray-600 mb-8 max-w-2xl mx-auto">
-        Discover hilarious memes featuring the iconic Japanese lucky cat. Share fortune and laughter with every scroll.
-      </p>
-      <button class="bg-maneki-red hover:bg-maneki-red/90 text-white px-6 py-3 rounded-full shadow-md hover:shadow-lg transition-all transform hover:-translate-y-1 active:translate-y-0">
-        Explore Memes <i class="fa fa-arrow-right ml-2"></i>
-      </button>
-    </section>
+  <!-- 英雄区 -->
+  <section class="relative py-20 overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <div class="absolute top-20 left-10 w-64 h-64 bg-maneko-gold/10 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-10 right-20 w-80 h-80 bg-maneko-red/5 rounded-full blur-3xl"></div>
+    </div>
     
-    <!-- 特色Meme展示 -->
-    <section id="featured" class="mb-16">
-      <h3 class="text-2xl font-bold mb-8 text-center">Featured Maneki Meme</h3>
-      <div class="bg-white rounded-xl shadow-sm overflow-hidden max-w-4xl mx-auto">
-        <img src="https://picsum.photos/seed/manekineko/800/450" alt="Featured Maneki-Neko Meme" class="w-full h-auto">
-        <div class="p-6">
-          <div class="flex justify-between items-center mb-3">
-            <span class="text-sm text-gray-500">Trending • <i class="fa fa-fire text-maneki-gold mr-1"></i> Hot</span>
-            <div class="flex gap-3">
-              <button class="text-gray-500 hover:text-maneki-red transition-colors">
-                <i class="fa fa-heart"></i> <span>2.4k</span>
-              </button>
-              <button class="text-gray-500 hover:text-maneki-gold transition-colors">
-                <i class="fa fa-share-alt"></i>
-              </button>
-            </div>
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="flex flex-col md:flex-row items-center gap-12">
+        <div class="md:w-1/2 text-center md:text-left">
+          <div class="inline-block px-3 py-1 bg-maneko-gold/20 text-maneko-gold rounded-full text-sm mb-4">
+            Fair Launched on pump.fun • Solana Meme Coin
           </div>
-          <h4 class="text-xl font-bold mb-2">"Fortune Always Comes in Memes"</h4>
-          <p class="text-gray-600 mb-4">When you realize the lucky cat's paw is just memeing at you all along.</p>
-          <div class="flex justify-between items-center">
-            <span class="text-sm text-gray-500">Posted 2 days ago</span>
-            <button class="text-maneki-gold hover:underline">View Comments</button>
+          <h1 class="text-[clamp(2.5rem,6vw,4rem)] font-bold leading-tight mb-6">
+            MANEKO <span class="text-maneko-gold text-glow">Lucky Cat</span> • Your Fortune Awaits
+          </h1>
+          <p class="text-xl text-gray-300 mb-8 max-w-lg mx-auto md:mx-0">
+            10B Total Supply • 0% Tax • 100% LP Locked • Fair Launch on pump.fun
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+            <button class="bg-maneko-gold text-maneko-dark px-6 py-3 rounded-full font-bold text-lg hover:scale-105 transition-transform pulse-gold">
+              Buy on pump.fun
+            </button>
+            <button class="bg-transparent border-2 border-maneko-gold text-maneko-gold px-6 py-3 rounded-full font-bold text-lg hover:bg-maneko-gold/10 transition-colors">
+              View on Solscan
+            </button>
+          </div>
+        </div>
+        
+        <div class="md:w-1/2 flex justify-center">
+          <div class="relative">
+            <!-- 招财猫主形象 -->
+            <img src="https://i.imgur.com/your-lucky-cat-image.jpg" alt="MANEKO Lucky Cat" class="w-64 h-64 md:w-80 md:h-80 object-contain float rounded-full border-4 border-maneko-gold pulse-gold">
+            <div class="absolute -top-5 -left-5 bg-black/80 border border-maneko-gold px-3 py-1 rounded-full text-sm">
+              <i class="fa fa-star text-maneko-gold mr-1"></i> Good Luck
+            </div>
+            <div class="absolute -bottom-5 -right-5 bg-black/80 border border-maneko-gold px-3 py-1 rounded-full text-sm">
+              <i class="fa fa-lock text-maneko-gold mr-1"></i> LP Locked
+            </div>
           </div>
         </div>
       </div>
-    </section>
-    
-    <!-- Meme列表 -->
-    <section id="memes" class="mb-16">
-      <h3 class="text-2xl font-bold mb-8">Latest Maneki Memes</h3>
+    </div>
+  </section>
+
+  <!-- 核心特点 -->
+  <section class="py-16 bg-black/30">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Why Choose MANEKO?</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+        <div class="bg-maneko-dark p-6 rounded-2xl border border-maneko-gold/20 text-center hover:border-maneko-gold/50 transition-colors">
+          <div class="w-16 h-16 bg-maneko-gold/20 rounded-full flex items-center justify-center mx-auto mb-4">
+            <i class="fa fa-cubes text-2xl text-maneko-gold"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-2">10B Total Supply</h3>
+          <p class="text-gray-400">Fixed supply of 10,000,000,000 MANEKO tokens</p>
+        </div>
+        
+        <div class="bg-maneko-dark p-6 rounded-2xl border border-maneko-gold/20 text-center hover:border-maneko-gold/50 transition-colors">
+          <div class="w-16 h-16 bg-maneko-gold/20 rounded-full flex items-center justify-center mx-auto mb-4">
+            <i class="fa fa-percent text-2xl text-maneko-gold"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-2">0% Tax</h3>
+          <p class="text-gray-400">No buy or sell taxes - Keep all your gains</p>
+        </div>
+        
+        <div class="bg-maneko-dark p-6 rounded-2xl border border-maneko-gold/20 text-center hover:border-maneko-gold/50 transition-colors">
+          <div class="w-16 h-16 bg-maneko-gold/20 rounded-full flex items-center justify-center mx-auto mb-4">
+            <i class="fa fa-lock text-2xl text-maneko-gold"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-2">LP Locked Forever</h3>
+          <p class="text-gray-400">Liquidity permanently locked - No rug pulls</p>
+        </div>
+        
+        <div class="bg-maneko-dark p-6 rounded-2xl border border-maneko-gold/20 text-center hover:border-maneko-gold/50 transition-colors">
+          <div class="w-16 h-16 bg-maneko-gold/20 rounded-full flex items-center justify-center mx-auto mb-4">
+            <i class="fa fa-balance-scale text-2xl text-maneko-gold"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-2">Fair Launch</h3>
+          <p class="text-gray-400">Launched on pump.fun with no presale or dev wallet</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 代币经济学 -->
+  <section id="tokenomics" class="py-20">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">MANEKO Tokenomics</h2>
+      
+      <div class="max-w-3xl mx-auto bg-maneko-dark rounded-2xl border border-maneko-gold/30 p-8 mb-12">
+        <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+          <div class="text-center md:text-left">
+            <h3 class="text-2xl font-bold mb-2 text-maneko-gold">Total Supply</h3>
+            <p class="text-4xl font-bold">10,000,000,000</p>
+            <p class="text-gray-400">MANEKO</p>
+          </div>
+          
+          <div class="w-16 h-1 bg-gray-700 hidden md:block"></div>
+          
+          <div class="text-center">
+            <h3 class="text-2xl font-bold mb-2 text-maneko-gold">Blockchain</h3>
+            <div class="flex items-center justify-center gap-2">
+              <img src="https://picsum.photos/seed/solana/40/40" alt="Solana Logo" class="w-10 h-10 rounded-full">
+              <span class="text-xl font-bold">Solana</span>
+            </div>
+          </div>
+          
+          <div class="w-16 h-1 bg-gray-700 hidden md:block"></div>
+          
+          <div class="text-center md:text-right">
+            <h3 class="text-2xl font-bold mb-2 text-maneko-gold">Launch Platform</h3>
+            <div class="flex items-center justify-center md:justify-end gap-2">
+              <span class="text-xl font-bold">pump.fun</span>
+              <i class="fa fa-rocket text-maneko-gold text-xl"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 税收结构 -->
+      <div class="max-w-3xl mx-auto">
+        <h3 class="text-2xl font-bold text-center mb-6">Tax Structure</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="bg-maneko-dark rounded-2xl border border-maneko-gold/30 p-6 text-center">
+            <h4 class="text-xl font-bold mb-2">Buy Tax</h4>
+            <p class="text-5xl font-bold text-maneko-gold">0%</p>
+            <p class="text-gray-400 mt-2">No fees on purchases</p>
+          </div>
+          
+          <div class="bg-maneko-dark rounded-2xl border border-maneko-gold/30 p-6 text-center">
+            <h4 class="text-xl font-bold mb-2">Sell Tax</h4>
+            <p class="text-5xl font-bold text-maneko-gold">0%</p>
+            <p class="text-gray-400 mt-2">No fees on sales</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 模因展示 -->
+  <section id="memes" class="py-20 bg-black/30">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">MANEKO Memes</h2>
+      
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- Meme Card 1 -->
-        <div class="bg-white rounded-xl shadow-sm overflow-hidden group hover:shadow-md transition-shadow">
-          <img src="https://picsum.photos/seed/maneki1/400/300" alt="Maneki-Neko Meme" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
-          <div class="p-4">
-            <div class="flex justify-between items-center mb-2">
-              <span class="text-xs bg-maneki-gold/10 text-maneki-red px-2 py-1 rounded">Funny</span>
-              <button class="text-gray-400 hover:text-maneki-red transition-colors">
-                <i class="fa fa-heart"></i>
-              </button>
-            </div>
-            <h4 class="font-semibold mb-2">"Lucky Cat vs. Monday"</h4>
-            <p class="text-sm text-gray-500 mb-3">When the paw can't even lift for Monday energy.</p>
-            <div class="flex justify-between items-center text-xs text-gray-400">
-              <span>3.2k likes</span>
-              <span>23 comments</span>
-            </div>
+        <div class="rounded-xl overflow-hidden border border-maneko-gold/30 hover:border-maneko-gold/70 transition-colors group">
+          <img src="https://i.imgur.com/your-lucky-meme-1.jpg" alt="MANEKO Solana Meme" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300">
+          <div class="p-4 bg-maneko-dark">
+            <h3 class="font-bold text-lg">MANEKO on Solana</h3>
+            <p class="text-gray-400 text-sm mt-1">Fast as a lucky cat's paw</p>
           </div>
         </div>
         
-        <!-- Meme Card 2 -->
-        <div class="bg-white rounded-xl shadow-sm overflow-hidden group hover:shadow-md transition-shadow">
-          <img src="https://picsum.photos/seed/maneki2/400/300" alt="Maneki-Neko Meme" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
-          <div class="p-4">
-            <div class="flex justify-between items-center mb-2">
-              <span class="text-xs bg-maneki-pink/10 text-maneki-red px-2 py-1 rounded">Wholesome</span>
-              <button class="text-gray-400 hover:text-maneki-red transition-colors">
-                <i class="fa fa-heart"></i>
-              </button>
-            </div>
-            <h4 class="font-semibold mb-2">"Fortune Cat's Advice"</h4>
-            <p class="text-sm text-gray-500 mb-3">Sometimes the best luck is just good memes.</p>
-            <div class="flex justify-between items-center text-xs text-gray-400">
-              <span>1.8k likes</span>
-              <span>12 comments</span>
-            </div>
+        <div class="rounded-xl overflow-hidden border border-maneko-gold/30 hover:border-maneko-gold/70 transition-colors group">
+          <img src="https://i.imgur.com/your-lucky-meme-2.jpg" alt="MANEKO Moon Meme" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300">
+          <div class="p-4 bg-maneko-dark">
+            <h3 class="font-bold text-lg">MANEKO to the Moon</h3>
+            <p class="text-gray-400 text-sm mt-1">0% tax = max gains</p>
           </div>
         </div>
         
-        <!-- Meme Card 3 -->
-        <div class="bg-white rounded-xl shadow-sm overflow-hidden group hover:shadow-md transition-shadow">
-          <img src="https://picsum.photos/seed/maneki3/400/300" alt="Maneki-Neko Meme" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
-          <div class="p-4">
-            <div class="flex justify-between items-center mb-2">
-              <span class="text-xs bg-maneki-gold/10 text-maneki-red px-2 py-1 rounded">Relatable</span>
-              <button class="text-gray-400 hover:text-maneki-red transition-colors">
-                <i class="fa fa-heart"></i>
-              </button>
-            </div>
-            <h4 class="font-semibold mb-2">"When You Need Luck for WiFi"</h4>
-            <p class="text-sm text-gray-500 mb-3">The paw raises, but the router still blinks.</p>
-            <div class="flex justify-between items-center text-xs text-gray-400">
-              <span>4.5k likes</span>
-              <span>42 comments</span>
-            </div>
+        <div class="rounded-xl overflow-hidden border border-maneko-gold/30 hover:border-maneko-gold/70 transition-colors group">
+          <img src="https://i.imgur.com/your-lucky-meme-3.jpg" alt="MANEKO Pump Meme" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300">
+          <div class="p-4 bg-maneko-dark">
+            <h3 class="font-bold text-lg">pump.fun Launch</h3>
+            <p class="text-gray-400 text-sm mt-1">Fair launch, no presale</p>
           </div>
         </div>
       </div>
       
       <div class="text-center mt-10">
-        <button class="bg-transparent border-2 border-maneki-gold text-maneki-gold px-6 py-3 rounded-full font-bold hover:bg-maneki-gold/10 transition-colors">
-          Load More Memes <i class="fa fa-refresh ml-2"></i>
+        <button class="bg-transparent border-2 border-maneko-gold text-maneko-gold px-6 py-3 rounded-full font-bold hover:bg-maneko-gold/10 transition-colors">
+          View All Memes <i class="fa fa-arrow-right ml-2"></i>
         </button>
       </div>
-    </section>
-    
-    <!-- 关于招财猫Meme -->
-    <section id="about" class="mb-16 bg-maneki-gold/5 rounded-2xl p-8">
-      <div class="flex flex-col md:flex-row gap-10 items-center">
-        <div class="md:w-1/2">
-          <h3 class="text-2xl font-bold mb-4">About Maneki-Neko Memes</h3>
-          <p class="text-gray-600 mb-4">
-            The Maneki-Neko (招き猫), or "beckoning cat," is a Japanese figurine believed to bring good luck. We've taken this iconic symbol and turned it into the ultimate meme star.
-          </p>
-          <p class="text-gray-600 mb-6">
-            Our collection blends traditional Japanese culture with modern internet humor—because nothing says "good fortune" like a well-timed meme.
-          </p>
-          <div class="flex gap-4">
-            <button class="bg-maneki-red hover:bg-maneki-red/90 text-white px-4 py-2 rounded-full font-bold transition-colors">
-              Learn More
-            </button>
-            <button class="bg-transparent border-2 border-maneki-red text-maneki-red px-4 py-2 rounded-full font-bold hover:bg-maneki-red/10 transition-colors">
-              Submit Meme
-            </button>
-          </div>
-        </div>
-        <div class="md:w-1/2 flex justify-center">
-          <img src="https://picsum.photos/seed/luckycat/400/400" alt="Maneki-Neko Figurine" class="w-64 h-64 object-contain rotate-paw">
-        </div>
-      </div>
-    </section>
-    
-    <!-- 社区区域 -->
-    <section id="community" class="mb-16">
-      <h3 class="text-2xl font-bold mb-8 text-center">Join the Maneki Community</h3>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-        <div class="bg-white rounded-xl shadow-sm p-6 text-center">
-          <div class="w-16 h-16 bg-maneki-gold/10 rounded-full flex items-center justify-center mx-auto mb-4">
-            <i class="fa fa-discord text-2xl text-maneki-gold"></i>
-          </div>
-          <h4 class="font-semibold mb-2">Discord</h4>
-          <p class="text-gray-500 text-sm mb-4">Chat with fellow meme lovers and share your creations.</p>
-          <button class="w-full bg-maneki-gold/10 hover:bg-maneki-gold/20 text-maneki-gold px-4 py-2 rounded-full text-sm font-bold transition-colors">
-            Join Server
-          </button>
-        </div>
-        
-        <div class="bg-white rounded-xl shadow-sm p-6 text-center">
-          <div class="w-16 h-16 bg-maneki-pink/10 rounded-full flex items-center justify-center mx-auto mb-4">
-            <i class="fa fa-twitter text-2xl text-maneki-pink"></i>
-          </div>
-          <h4 class="font-semibold mb-2">Twitter</h4>
-          <p class="text-gray-500 text-sm mb-4">Stay updated on new memes and community events.</p>
-          <button class="w-full bg-maneki-pink/10 hover:bg-maneki-pink/20 text-maneki-pink px-4 py-2 rounded-full text-sm font-bold transition-colors">
-            Follow
-          </button>
-        </div>
-        
-        <div class="bg-white rounded-xl shadow-sm p-6 text-center">
-          <div class="w-16 h-16 bg-maneki-red/10 rounded-full flex items-center justify-center mx-auto mb-4">
-            <i class="fa fa-reddit text-2xl text-maneki-red"></i>
-          </div>
-          <h4 class="font-semibold mb-2">Reddit</h4>
-          <p class="text-gray-500 text-sm mb-4">Post memes, vote on favorites, and discuss all things Maneki.</p>
-          <button class="w-full bg-maneki-red/10 hover:bg-maneki-red/20 text-maneki-red px-4 py-2 rounded-full text-sm font-bold transition-colors">
-            Visit Subreddit
-          </button>
-        </div>
-      </div>
-    </section>
-  </main>
+    </div>
+  </section>
 
-  <!-- 页脚 -->
-  <footer class="bg-maneki-black text-white py-8">
+  <!-- 购买指南 -->
+  <section id="buy" class="py-20">
     <div class="container mx-auto px-4">
-      <div class="flex flex-col md:flex-row justify-between items-center gap-6">
-        <div class="flex items-center gap-2">
-          <div class="bg-maneki-gold text-maneki-red p-2 rounded">
-            <i class="fa fa-paw text-xl"></i>
-          </div>
-          <span class="font-semibold text-xl">ManekiMeme</span>
-        </div>
-        
-        <div class="text-sm text-gray-400">
-          &copy; 2023 ManekiMeme. All rights reserved.
-        </div>
-        
-        <div class="flex gap-4">
-          <a href="#" class="text-gray-400 hover:text-maneki-gold transition-colors">
-            <i class="fa fa-instagram"></i>
-          </a>
-          <a href="#" class="text-gray-400 hover:text-maneki-gold transition-colors">
-            <i class="fa fa-twitter"></i>
-          </a>
-          <a href="#" class="text-gray-400 hover:text-maneki-gold transition-colors">
-            <i class="fa fa-discord"></i
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">How to Buy MANEKO</h2>
+      
+      <div class="max-w-3xl mx-auto bg-maneko-dark rounded-2xl border border-man
